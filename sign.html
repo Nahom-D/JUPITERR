@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupiter Planet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #00203F, #ADEFD1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .continue-btn {
+            background-color: #ADEFD1;
+            color: #00203F;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+
+        .continue-btn:hover {
+            background-color: #F5A623;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            display: none;
+            border-radius: 10px;
+        }
+
+        .modal p {
+            font-size: 1.5rem;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jupiter Planet</h1>
+        <input type="text" id="fullName" placeholder="Full Name">
+        <input type="password" id="password" placeholder="Password">
+        <button class="continue-btn" onclick="saveData()">Continue</button>
+    </div>
+
+    <div class="modal" id="welcomeModal">
+        <p>WELCOME</p>
+    </div>
+
+    <script>
+        function saveData() {
+            const fullName = document.getElementById('fullName').value;
+            const password = document.getElementById('password').value;
+
+            if (fullName && password) {
+                localStorage.setItem('fullName', fullName);
+                localStorage.setItem('password', password);
+
+                // Show the modal
+                const modal = document.getElementById('welcomeModal');
+                modal.style.display = 'block';
+
+                // Hide the modal after 8 seconds and redirect
+                setTimeout(function() {
+                    window.location.href = 'main.html';
+                }, 8000);
+            }
+        }
+    </script>
+</body>
+</html>

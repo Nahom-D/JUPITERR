@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Community</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff; /* White background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px; /* Limit the width of the container */
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px; /* Rounded corners */
+            background-color: #f9f9f9; /* Light grey background for the container */
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333; /* Dark text color */
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555; /* Medium text color */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff; /* White text color */
+            background-color: #007bff; /* Blue button color */
+            border: none;
+            border-radius: 5px; /* Rounded button corners */
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
+            transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05); /* Slight scaling on hover */
+        }
+
+        .motto {
+            font-size: 16px;
+            font-style: italic; /* Italic text style */
+            color: #777; /* Light grey color for the motto */
+            margin-top: 20px;
+        }
+         .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: #007BFF;}
+    </style>
+</head>
+<body>
+ <button class="back-button" onclick="window.location.href='home.html';">←</button>
+<div class="container">
+    <h1>Join our partner channel</h1>
+    <p>So click the below button to join.</p>
+    <p>Get 20000 $JPTR when you finish this task</p>
+    
+    <a href="https://youtube.com/@vdcoin-9325?si=yAUEmWRhD7yPYoE_" class="button" id="join-btn" >Subscribe</a>
+    <p class="motto">Work harder, get the best.</p>
+</div>
+<script>
+    // Function to add 30000 to the existing JPTR in local storage
+    function addJupiterCoins() {
+        const key = 'Jupitercoins';
+        const reward = 20000;
+
+        // Get the current value from localStorage or default to 0 if it doesn't exist
+        let currentCoins = parseInt(localStorage.getItem(key)) || 0;
+
+        // Add the reward to the existing coins
+        currentCoins += reward;
+
+        // Update the value in localStorage
+        localStorage.setItem(key, currentCoins);
+    }
+
+    // Add event listener to the Join button
+    document.getElementById('join-btn').addEventListener('click', function() {
+        // Call the function to add coins
+        addJupiterCoins();
+    });
+    </script>
+</body>
+</html>

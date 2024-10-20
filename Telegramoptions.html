@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Decorated Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .container h1 {
+            font-size: 50px;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 20px 40px;
+            margin: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:active {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .glow-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+            animation: glow 5s infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes glow {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Join Our Amazing Community</h1>
+    <button class="button" onclick="window.location.href='locationtelegramchannel.html'">Join Channels</button>
+    <button class="button" onclick="window.location.href='you.html'">Join Bots</button>
+</div>
+
+<div class="glow-effect"></div>
+
+</body>
+</html>

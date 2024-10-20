@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* General styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #00d4ff, #020024);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            position: relative; /* Allow positioning of footer */
+        }
+
+        /* Header styling */
+        h1, h2 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin-top: 130px;
+            font-size: 3rem;
+            color: #ffcc00;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .emoji-container {
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+
+        /* Message styling */
+        .message {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+        }
+
+        /* Coin display styling */
+        .coin-display {
+            margin: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-size: 2rem;
+            color: #ffcc00;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Button styling */
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Change to vertical layout */
+            align-items: center;
+            gap: 10px;
+            margin: 20px;
+            margin-right: 100px;
+            margin-bottom: 150px;
+        }
+
+        .social-btn {
+            padding: 15px 30px;
+            background-color: #ffcc00;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 300px;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer styling */
+        footer {
+            position: fixed; /* Position at the bottom */
+            bottom: 20px; /* Adjust as necessary */
+            background: linear-gradient(45deg, #00d4ff, #020024);
+            left: 80%;
+            bottom: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column; /* Vertical layout */
+            align-items: center; /* Center align buttons */
+            gap: 10px;            
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-btn {
+            padding: 15px 20px;
+            background-color: #ffcc00;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .footer-btn img {
+            width: 20px; /* Set icon size */
+            margin-right: 8px; /* Space between icon and text */
+        }
+
+        .footer-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Headers -->
+    <h1>Don't miss this opportunity!</h1>
+    
+    <!-- Message -->
+    <div class="message">It will end on September 30. Complete tasks, then connect to PJ Wallet and withdraw your earnings!</div>
+
+    <!-- Coin display -->
+    <h2>Jupiter</h2>
+    <div class="coin-display" id="coin-display"> 0 :$JPTR </div>
+
+    <!-- Social buttons -->
+    <div class="button-container">
+        <button class="social-btn" id="telegram-btn">Complete Tasks On Telegram</button>
+        <button class="social-btn" id="youtube-btn">Complete Tasks On YouTube</button>
+    </div>
+
+    <!-- Footer with buttons -->
+    <footer>
+        <button class="footer-btn" id="withdraw-btn">Withdraw</button>
+    </footer>
+
+    <script>
+        // Function to retrieve coins from local storage
+        function updateCoinDisplay() {
+            const coins = localStorage.getItem("Jupitercoins") || 0;
+            document.getElementById("coin-display").textContent = `${coins} : $JPTR `;
+        }
+
+        // Run updateCoinDisplay on page load
+        updateCoinDisplay();
+
+        // Redirect to respective pages when buttons are clicked
+        document.getElementById("telegram-btn").addEventListener("click", () => {
+            window.location.href = "Telegramoptions.html"; // Replace with your actual Telegram URL
+        });
+
+        document.getElementById("youtube-btn").addEventListener("click", () => {
+            window.location.href = "TelegramoptionsY.html"; // Replace with your actual YouTube URL
+        });
+
+        document.getElementById("withdraw-btn").addEventListener("click", () => {
+            window.location.href = "withdrawbot.html"; // Redirect to withdraw.html
+        });
+    </script>
+</body>
+</html>

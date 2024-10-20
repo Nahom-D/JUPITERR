@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Pages</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, #1c1c3c, #2f005a, #7f00ff, #e100ff);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            color: #ffcc00;
+        }
+
+        /* Button styling */
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 500px;
+        }
+
+        .join-btn {
+            padding: 20px;
+            background-color: #ffcc00;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .join-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Adding subtle animations */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.8); }
+            100% { box-shadow: 0 0 20px rgba(255, 204, 0, 0); }
+        }
+
+        .join-btn {
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .button-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Header -->
+    <h1>SUBSCRIBE OUR PARTNER YOUTUBE CHANNEL.</h1>
+
+    <!-- Button container -->
+    <div class="button-container">
+        <button class="join-btn" id="jupiter-btn">GO</button>
+       
+        
+    </div>
+
+    <script>
+        // Button event listeners to redirect users
+        document.getElementById("jupiter-btn").addEventListener("click", () => {
+            window.location.href = "channel1Y.html"; // Replace with actual link
+        });
+
+        document.getElementById("amsterdam-btn").addEventListener("click", () => {
+            window.location.href = "https://t.me/primative2"; // Replace with actual link
+        });
+
+        document.getElementById("washington-btn").addEventListener("click", () => {
+            window.location.href = "https://example.com/washington"; // Replace with actual link
+        });
+
+        document.getElementById("georgia-btn").addEventListener("click", () => {
+            window.location.href = "https://example.com/georgia"; // Replace with actual link
+        });
+
+        document.getElementById("paris-btn").addEventListener("click", () => {
+            window.location.href = "https://example.com/paris"; // Replace with actual link
+        });
+
+        document.getElementById("saltuk-btn").addEventListener("click", () => {
+            window.location.href = "https://example.com/saltuk"; // Replace with actual link
+        });
+
+        document.getElementById("consti-btn").addEventListener("click", () => {
+            window.location.href = "https://example.com/consti"; // Replace with actual link
+        });
+
+        document.getElementById("mala-btn").addEventListener("click", () => {
+            window.location.href = "https://example.com/mala"; // Replace with actual link
+        });
+    </script>
+
+</body>
+</html>

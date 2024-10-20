@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ADEFD1, #00203F);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .go-btn {
+            background-color: #00203F;
+            color: #ADEFD1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+
+        .go-btn:hover {
+            background-color: #F5A623;
+        }
+
+        .modal-error {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            display: none;
+            border-radius: 10px;
+        }
+
+        .modal-error p {
+            font-size: 1.5rem;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <input type="text" id="fullName" placeholder="Full Name">
+        <input type="password" id="password" placeholder="Password">
+        <button class="go-btn" onclick="validateData()">Go</button>
+    </div>
+
+    <div class="modal-error" id="errorModal">
+        <p>Invalid Full Name or Password</p>
+    </div>
+
+    <script>
+        function validateData() {
+            const fullName = document.getElementById('fullName').value;
+            const password = document.getElementById('password').value;
+
+            const storedName = localStorage.getItem('fullName');
+            const storedPassword = localStorage.getItem('password');
+
+            if (fullName === storedName && password === storedPassword) {
+                window.location.href = 'home.html';
+            } else {
+                const errorModal = document.getElementById('errorModal');
+                errorModal.style.display = 'block';
+
+                setTimeout(function() {
+                    errorModal.style.display = 'none';
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>
